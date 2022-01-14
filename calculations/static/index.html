@@ -63,24 +63,24 @@ h1{
         <h1><u>VOLUME OF CYLINDER</u></h1>
         <form>
             <div class=formelement>
-                <lable for="aedit">Radius:</lable>
+                <label for="aedit">Radius:</label>
                 <input type="text" id="aedit" value="0"/> Meters
             </div><br>
             <div class=formelement>
-                <lable for="bedit">Height:</lable>
+                <label for="bedit">Height:</label>
                 <input type="text" id="bedit" value="0"/> Meters
             </div><br>
             <div class=formelement>
                 <input type="button" value="Calculate Volume" id="addbutton"/>
             </div><br>
             <div class=formelement>
-                <lable for="cedit">Volume:</lable>
-                <input type="text" id="cedit" readonly="0"/> Meter<sup>3</sup>
+                <label for="cedit">Volume:</label>
+                <input type="text" id="cedit" readonly value="0"/> Meter<sup>3</sup>
             </div>
         </form>
     </div>
 </div>
-<script type="text/javascript">
+<script>
 var button;
  
 button=document.querySelector("#addbutton");
@@ -119,19 +119,19 @@ button.addEventListener("click",function(){
       <h1><u>AREA OF RECTANGLE</u></h1>
       <form>
           <div class=formelement>
-              <lable for="ledit">Length:</lable>
+              <label for="ledit">Length:</label>
               <input type="text" id="ledit" value="0"/> Meters
           </div><br>
           <div class=formelement>
-              <lable for="wedit">Width:</lable>
+              <label for="wedit">Width:</label>
               <input type="text" id="wedit" value="0"/> Meters
           </div><br>
           <div class=formelement>
               <input type="button" value="Calculate Area" id="calbutton"/>
           </div><br>
           <div class=formelement>
-              <lable for="xedit">Area:</lable>
-              <input type="text" id="xedit" readonly="0"/> Meters<sup>2</sup>
+              <label for="xedit">Area:</label>
+              <input type="text" id="xedit" readonly value="0"/> Meters<sup>2</sup>
           </div>
           <div class=formelement>
               Formula is LENGTH*WIDTH
@@ -141,7 +141,7 @@ button.addEventListener("click",function(){
   <div class="footer">Developed by Monisha T </div>
   </div>
 
-  <script type="text/javascript">
+  <script>
       var button;
       button=document.querySelector("#calbutton");
       button.addEventListener("click",function(){

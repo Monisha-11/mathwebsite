@@ -101,38 +101,53 @@ h1{
         <h1><u>VOLUME OF CYLINDER</u></h1>
         <form>
             <div class=formelement>
-                <lable for="aedit">Radius:</lable>
+                <label for="aedit">Radius:</label>
                 <input type="text" id="aedit" value="0"/> Meters
             </div><br>
             <div class=formelement>
-                <lable for="bedit">Height:</lable>
+                <label for="bedit">Height:</label>
                 <input type="text" id="bedit" value="0"/> Meters
             </div><br>
             <div class=formelement>
                 <input type="button" value="Calculate Volume" id="addbutton"/>
             </div><br>
             <div class=formelement>
-                <lable for="cedit">Volume:</lable>
-                <input type="text" id="cedit" readonly="0"/> Meter<sup>3</sup>
+                <label for="cedit">Volume:</label>
+                <input type="text" id="cedit" readonly value="0"/> Meter<sup>3</sup>
             </div>
         </form>
     </div>
 </div>
-<script type="text/javascript">
+<script>
 var button;
  
 button=document.querySelector("#addbutton");
 button.addEventListener("click",function(){
     
     var atext,btext,ctext;
-    var aval,bval,cval
+    var aval,bval,cval;
+    var result,result1,rexp;
     atext=document.querySelector("#aedit");
     btext=document.querySelector("#bedit");
     ctext=document.querySelector("#cedit");
 
-    aval=parseInt(atext.value);
-    bval=parseInt(btext.value);
-    cval=aval*aval*bval*3.14;
+    Rexp=new RegExp("^[1-9]+[0-9]*$");
+
+    aval=atext.value;
+    result=aval.match(rexp);
+    bval=btext.value;
+    result1=bval.match(rexp);
+
+    if(result==null)
+    {
+        alert("please enter only positive integers for radius")
+    }
+    if(result1==null)
+    {
+        alert("please enter only positive integers for height ")
+    }
+    
+    cval=22/7*aval*aval*bval;
     ctext.value=""+cval;
 
 });
@@ -142,19 +157,19 @@ button.addEventListener("click",function(){
       <h1><u>AREA OF RECTANGLE</u></h1>
       <form>
           <div class=formelement>
-              <lable for="aedit">Length:</lable>
-              <input type="text" id="aedit" value="0"/> Meters
+              <label for="ledit">Length:</label>
+              <input type="text" id="ledit" value="0"/> Meters
           </div><br>
           <div class=formelement>
-              <lable for="bedit">Width:</lable>
-              <input type="text" id="bedit" value="0"/> Meters
+              <label for="wedit">Width:</label>
+              <input type="text" id="wedit" value="0"/> Meters
           </div><br>
           <div class=formelement>
               <input type="button" value="Calculate Area" id="calbutton"/>
           </div><br>
           <div class=formelement>
-              <lable for="cedit">Area:</lable>
-              <input type="text" id="cedit" readonly="0"/> Meters<sup>2</sup>
+              <label for="xedit">Area:</label>
+              <input type="text" id="xedit" readonly value="0"/> Meters<sup>2</sup>
           </div>
           <div class=formelement>
               Formula is LENGTH*WIDTH
@@ -164,29 +179,48 @@ button.addEventListener("click",function(){
   <div class="footer">Developed by Monisha T </div>
   </div>
 
-  <script type="text/javascript">
+  <script>
       var button;
       button=document.querySelector("#calbutton");
       button.addEventListener("click",function(){
-          var atext,btext,ctext;
-          var aval,bval,cval;
-          atext=document.querySelector("#aedit");
-          btext=document.querySelector("#bedit");
-          ctext=document.querySelector("#cedit");
+          var ltext,wtext,xtext;
+          var lval,wval,xval;
+          var result2,result3,rexp1;
+          ltext=document.querySelector("#ledit");
+          wtext=document.querySelector("#wedit");
+          xtext=document.querySelector("#xedit");
 
-          aval=parseInt(atext.value);
-          bval=parseInt(btext.value);
-          cval=aval*bval
-          ctext.value=""+cval;
-      });
+          rexp1=new RegExp("^[1-9]+[0-9]*$");
+
+          lval=ltext.value;
+          result2=lval.match(rexp1);
+          wval=wtext.value;
+          result3=wval.match(rexp1)
+
+          if(result2==null)
+          {    
+              alert("please enter only positive integer for length")
+          }
+
+          if(result3==null)
+          {    
+              alert("please enter only positive integer for width")
+          }
+
+            xval=lval*wval;
+            xtext.value=""+xval;
+ 
+         });
   </script>
 </body>
 </html>
+
 ```
 
 ## OUTPUT:
 
-![output](output1.png)
+![output](./output1.png)
+![output](./output2.png)
 
 ## Result:
 
